@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{site_setting.site_title}}</title>
+  <meta name="description" content="{{ site_setting.meta_description|default:''}}">
+  <meta name="keyboards" content="{{ site_setting.meta_keyboards|default:''}}">
+  <!--Favicon-->
+  {% if site_setting.favicon %}
+     <link rel="icon" href="{{ site_setting.faviction.url }}" type="image/X-icon">
+  {% endif %}
+
+ <!--open Graph (Social Media Preview)-->
+  <meta property="og:title" content="{{ site_setting.meta_title }}">
+  <meta property="og:description" content="{{ site_setting.meta_description}}">
+  {% if site_setting.logo %}
+   <meta property="og.image" content="{{ site_setting.logo.url }}">
+  {% endif %}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  {% include 'includes/header1.html' %}
+
+  <div ckass="container my-4">
+    {% block content %}{% endblock %}
+  </div>
+  {% include 'include/footer1.html' %}
+  <script src="http://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.bundle.min.js"></script>
+</body>
+
+  
